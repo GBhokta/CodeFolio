@@ -29,10 +29,27 @@ It allows users to create and showcase their portfolios with **multiple elegant 
 ## Demo Screenshots
 Demo images of different portfolio templates are saved in the **`DEMO IMAGES/`** folder.  
 
-![Modern Dark Theme](https://github.com/GBhokta/CodeFolio/blob/main/DEMO%20IMAGES/Screenshot%20(588).png)
-![Elegant Light Theme](https://github.com/GBhokta/CodeFolio/blob/main/DEMO%20IMAGES/Screenshot%20(593).png)
+## 📸 Demo Screenshots
 
----
+
+![LOGIN PAGE](https://github.com/GBhokta/CodeFolio/blob/main/DEMO%20IMAGES/Screenshot%20(588).png)
+![HOME PAGE](https://github.com/GBhokta/CodeFolio/blob/main/DEMO%20IMAGES/Screenshot%20(589).png)
+![ADD DETAILS](https://github.com/GBhokta/CodeFolio/blob/main/DEMO%20IMAGES/Screenshot%20(591).png)
+https://github.com/GBhokta/CodeFolio/blob/main/DEMO%20IMAGES/Screenshot%20(592).png)
+(https://github.com/GBhokta/CodeFolio/blob/main/DEMO%20IMAGES/Screenshot%20(592).png)
+(https://github.com/GBhokta/CodeFolio/blob/main/DEMO%20IMAGES/Screenshot%20(593).png)
+
+(https://github.com/GBhokta/CodeFolio/blob/main/DEMO%20IMAGES/Screenshot%20(594).png)
+(https://github.com/GBhokta/CodeFolio/blob/main/DEMO%20IMAGES/Screenshot%20(595).png)
+(https://github.com/GBhokta/CodeFolio/blob/main/DEMO%20IMAGES/Screenshot%20(596).png)
+
+
+(https://github.com/GBhokta/CodeFolio/blob/main/DEMO%20IMAGES/Screenshot%20(597).png)
+(https://github.com/GBhokta/CodeFolio/blob/main/DEMO%20IMAGES/Screenshot%20(598).png)
+(https://github.com/GBhokta/CodeFolio/blob/main/DEMO%20IMAGES/Screenshot%20(599).png)
+(https://github.com/GBhokta/CodeFolio/blob/main/DEMO%20IMAGES/Screenshot%20(600).png)
+(https://github.com/GBhokta/CodeFolio/blob/main/DEMO%20IMAGES/Screenshot%20(601).png)
+
 
 ##  Installation & Setup
 
