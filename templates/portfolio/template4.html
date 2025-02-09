@@ -1,0 +1,185 @@
+{% extends 'portfolio/base_portfolio.html' %}
+{% load static %}
+
+{% block content %}
+<style>
+    /* General Sci-Fi Theme */
+    body {
+        font-family: 'Orbitron', sans-serif;
+        background-color: #050505;
+        color: #0ff;
+        margin: 0;
+        padding: 0;
+    }
+
+    .container {
+        width: 90%;
+        max-width: 1200px;
+        margin: auto;
+        padding: 20px;
+    }
+
+    /* Glowing Neon Navbar */
+    .navbar {
+        background: rgba(0, 0, 0, 0.9);
+        padding: 15px 20px;
+        box-shadow: 0 0 10px rgba(0, 255, 255, 0.8);
+    }
+    .navbar a {
+        color: #0ff !important;
+        font-weight: bold;
+        text-decoration: none;
+        padding: 10px 15px;
+    }
+    .navbar a:hover {
+        color: #f0f;
+    }
+
+    /* Profile Section */
+    .profile-section {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 50px 20px;
+        background: linear-gradient(135deg, #060606, #121212);
+        border: 2px solid #0ff;
+        box-shadow: 0 0 20px #0ff;
+        border-radius: 12px;
+        margin-bottom: 30px;
+    }
+
+    .profile-img {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        border: 3px solid #f0f;
+        object-fit: cover;
+        margin-bottom: 15px;
+    }
+
+    .social-links a {
+        color: #0ff;
+        margin: 0 10px;
+        font-size: 20px;
+        transition: 0.3s;
+    }
+    .social-links a:hover {
+        color: #f0f;
+    }
+
+    /* Sections */
+    .section {
+        background: #090909;
+        padding: 30px;
+        margin-bottom: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 15px #0ff;
+        border: 1px solid #0ff;
+        transition: 0.3s;
+    }
+
+    .section:hover {
+        box-shadow: 0 0 20px #f0f;
+    }
+
+    .section h2 {
+        color: #0ff;
+        border-bottom: 2px solid #0ff;
+        display: inline-block;
+        margin-bottom: 20px;
+    }
+
+    /* Lists */
+    ul {
+        list-style: none;
+        padding: 0;
+    }
+    ul li {
+        background: #131313;
+        padding: 10px;
+        margin-bottom: 10px;
+        border-radius: 5px;
+        transition: 0.3s;
+    }
+    ul li:hover {
+        background: #202020;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+        .profile-section {
+            flex-direction: column;
+            text-align: center;
+        }
+    }
+</style>
+
+<div class="navbar">
+    <a href="#">Home</a>
+    <a href="#education">Education</a>
+    <a href="#projects">Projects</a>
+    <a href="#skills">Skills</a>
+    <a href="#contact">Contact</a>
+</div>
+
+<div class="container">
+    <div class="profile-section">
+        <div>
+            {% if user_profile.profile_image %}
+                <img src="{{ user_profile.profile_image.url }}" alt="Profile Image" class="profile-img">
+            {% else %}
+                <img src="{% static 'portfolio/default_profile.png' %}" alt="Profile Image" class="profile-img">
+            {% endif %}
+            <h1>{{ portfolio.user.get_full_name }}</h1>
+            <p>{{ user_profile.bio }}</p>
+            <div class="social-links">
+                {% if user_profile.linkedin %}<a href="{{ user_profile.linkedin }}" target="_blank"><i class="fab fa-linkedin"></i></a>{% endif %}
+                {% if user_profile.github %}<a href="{{ user_profile.github }}" target="_blank"><i class="fab fa-github"></i></a>{% endif %}
+                {% if user_profile.twitter %}<a href="{{ user_profile.twitter }}" target="_blank"><i class="fab fa-twitter"></i></a>{% endif %}
+            </div>
+        </div>
+    </div>
+
+    <div id="education" class="section">
+        <h2>Education</h2>
+        <ul>
+            {% for edu in educations %}
+            <li>{{ edu.course }} - {{ edu.institute }} ({{ edu.year_of_passing }})</li>
+            {% endfor %}
+        </ul>
+    </div>
+
+    <div id="projects" class="section">
+        <h2>Projects</h2>
+        <ul>
+            {% for project in projects %}
+            <li>
+                <strong>{{ project.title }}</strong> ({{ project.role }})<br>
+                {{ project.description }}<br>
+                {% if project.github_repo %} <a href="{{ project.github_repo }}" style="color: #0ff;">GitHub Repo</a> {% endif %}
+                {% if project.live_demo %} | <a href="{{ project.live_demo }}" style="color: #0ff;">Live Demo</a> {% endif %}
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+
+    <div id="skills" class="section">
+        <h2>Skills</h2>
+        <ul>
+            {% for skill in skills %}
+            <li>{{ skill.name }} ({{ skill.proficiency }})</li>
+            {% endfor %}
+        </ul>
+    </div>
+
+    <div id="contact" class="section">
+        <h2>Contact</h2>
+        <p>Email: <a href="mailto:{{ portfolio.user.email }}" style="color: #0ff;">{{ portfolio.user.email }}</a></p>
+        {% if portfolio.website %}
+            <p>Website: <a href="{{ portfolio.website }}" style="color: #0ff;">{{ portfolio.website }}</a></p>
+        {% endif %}
+    </div>
+</div>
+
+{% endblock %}

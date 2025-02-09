@@ -1,0 +1,11 @@
+<!-- templates/portfolio/education_list.html -->
+{% extends 'base.html' %}
+{% block content %}
+<h2>Education List</h2>
+<ul>
+    {% for education in educations %}
+    <li>{{ education.course }} at {{ education.institute }} - <a href="{% url 'edit_education' education.pk %}">Edit</a> | <a href="{% url 'delete_education' education.pk %}">Delete</a></li>
+    {% endfor %}
+</ul>
+<a href="{% url 'add_education' %}">Add New Education</a>
+{% endblock %}

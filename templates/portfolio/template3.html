@@ -1,0 +1,254 @@
+{% extends 'portfolio/base_portfolio.html' %}
+{% load static %}
+
+{% block content %}
+<style>
+    /* General Styles */
+    body {
+        font-family: 'Poppins', sans-serif;
+        background-color: #e6f2ff; /* Light blue background */
+        color: #333;
+        margin: 0;
+        padding: 0;
+    }
+
+    .container {
+        width: 90%;
+        max-width: 1200px;
+        margin: auto;
+        padding: 20px;
+    }
+
+    /* Profile Section */
+    .profile-section {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 50px 20px;
+        background: linear-gradient(135deg, #0073e6 0%, #66b3ff 100%); /* Gradient background */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        border-radius: 12px;
+        margin-bottom: 30px;
+        color: white;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .profile-section:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    .profile-img {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        border: 4px solid #fff;
+        object-fit: cover;
+        margin-bottom: 15px;
+        animation: fadeIn 1s ease-in-out;
+    }
+
+    .profile-section h1 {
+        font-size: 2.5em;
+        margin-bottom: 10px;
+        animation: slideDown 1s ease-out;
+    }
+
+    .profile-section p {
+        font-size: 1.2em;
+        max-width: 800px;
+        margin: auto;
+        animation: fadeIn 1.5s ease-in-out;
+    }
+
+    .social-links a {
+        color: white;
+        margin: 0 10px;
+        font-size: 24px;
+        transition: color 0.3s, transform 0.3s;
+    }
+
+    .social-links a:hover {
+        color: #e0e0e0;
+        transform: scale(1.1);
+    }
+
+    /* Sections */
+    .section {
+        background: white;
+        padding: 40px;
+        margin-bottom: 30px;
+        border-radius: 12px;
+        box-shadow: 0 0 15px rgba(0, 115, 230, 0.1);
+        transition: all 0.3s ease;
+    }
+
+    .section:hover {
+        box-shadow: 0 0 25px rgba(0, 115, 230, 0.2);
+    }
+
+    .section h2 {
+        color: #0073e6;
+        border-left: 5px solid #0073e6;
+        padding-left: 10px;
+        margin-bottom: 25px;
+        position: relative;
+    }
+
+    .section h2::after {
+        content: '';
+        position: absolute;
+        bottom: -10px;
+        left: 0;
+        width: 50px;
+        height: 3px;
+        background: #0073e6;
+    }
+
+    /* Lists */
+    ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    ul li {
+        background: #f9f9f9;
+        padding: 15px;
+        margin-bottom: 15px;
+        border-radius: 8px;
+        transition: background 0.3s, transform 0.3s;
+    }
+
+    ul li:hover {
+        background: #e6f2ff;
+        transform: translateX(5px);
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+        .profile-section {
+            flex-direction: column;
+            padding: 30px 20px;
+        }
+
+        .profile-section h1 {
+            font-size: 2em;
+        }
+
+        .section {
+            padding: 30px;
+        }
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+    }
+
+    @keyframes slideDown {
+        from { transform: translateY(-20px); opacity: 0; }
+        to { transform: translateY(0); opacity: 1; }
+    }
+</style>
+
+<div class="container">
+    <!-- Profile Section -->
+    <div class="profile-section">
+        <div>
+            {% if user_profile.profile_image %}
+                <img src="{{ user_profile.profile_image.url }}" alt="Profile Image" class="profile-img">
+            {% else %}
+                <img src="{% static 'portfolio/default_profile.png' %}" alt="Profile Image" class="profile-img">
+            {% endif %}
+            <h1>{{ portfolio.user.get_full_name }}</h1>
+            <p>{{ user_profile.bio }}</p>
+            <div class="social-links">
+                {% if user_profile.linkedin %}<a href="{{ user_profile.linkedin }}" target="_blank"><i class="fab fa-linkedin"></i></a>{% endif %}
+                {% if user_profile.github %}<a href="{{ user_profile.github }}" target="_blank"><i class="fab fa-github"></i></a>{% endif %}
+                {% if user_profile.twitter %}<a href="{{ user_profile.twitter }}" target="_blank"><i class="fab fa-twitter"></i></a>{% endif %}
+            </div>
+        </div>
+    </div>
+
+    <!-- Education -->
+    <div class="section">
+        <h2>Education</h2>
+        <ul>
+            {% for edu in educations %}
+            <li>
+                <strong>{{ edu.course }}</strong> at {{ edu.institute }} ({{ edu.year_of_passing }})
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+
+    <!-- Projects -->
+    <div class="section">
+        <h2>Projects</h2>
+        <ul>
+            {% for project in projects %}
+            <li>
+                <strong>{{ project.title }}</strong> - <em>{{ project.role }}</em><br>
+                {{ project.description }}<br>
+                {% if project.github_repo %} <a href="{{ project.github_repo }}" style="color: #0073e6;">GitHub Repo</a> {% endif %}
+                {% if project.live_demo %} | <a href="{{ project.live_demo }}" style="color: #0073e6;">Live Demo</a> {% endif %}
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+
+    <!-- Skills -->
+    <div class="section">
+        <h2>Skills</h2>
+        <ul>
+            {% for skill in skills %}
+            <li>
+                <div style="display: flex; align-items: center;">
+                    <span style="flex: 1;">{{ skill.name }}</span>
+                    <div style="flex: 3; background: #e6f2ff; border-radius: 5px; overflow: hidden; margin-left: 10px;">
+                        <div style="width: {{ skill.proficiency }}%; background: #0073e6; height: 10px;"></div>
+                    </div>
+                </div>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+
+    <!-- Publications -->
+    <div class="section">
+        <h2>Publications</h2>
+        <ul>
+            {% for publication in publications %}
+            <li>
+                <strong>{{ publication.title }}</strong><br>
+                {{ publication.journal }} ({{ publication.year }})
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+
+    <!-- Certifications -->
+    <div class="section">
+        <h2>Certifications</h2>
+        <ul>
+            {% for certification in certifications %}
+            <li>
+                <strong>{{ certification.title }}</strong> by {{ certification.issuer }} 
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+
+    <!-- Contact -->
+    <div class="section">
+        <h2>Contact</h2>
+        <p>Email: <a href="mailto:{{ portfolio.user.email }}" style="color: #0073e6;">{{ portfolio.user.email }}</a></p>
+        {% if portfolio.website %}
+            <p>Website: <a href="{{ portfolio.website }}" style="color: #0073e6;">{{ portfolio.website }}</a></p>
+        {% endif %}
+    </div>
+</div>
+
+{% endblock %}

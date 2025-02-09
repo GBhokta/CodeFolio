@@ -1,0 +1,25 @@
+.nav-gap {
+    display: flex;
+    gap: 20px; /* Adds spacing between nav items */
+}
+.card {
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.btn {
+    border-radius: 5px;
+    padding: 10px 20px;
+}
+footer a {
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+}
+
+footer a:hover {
+    color: #00aaff;
+}

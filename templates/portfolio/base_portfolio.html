@@ -1,0 +1,98 @@
+{% extends 'base.html' %}
+{% block title %}Edit Portfolio{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="form-style-10">
+        <h1>Edit Your Portfolio<span>Update your profile with projects, skills, and achievements.</span></h1>
+
+        <!-- Portfolio Form -->
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+
+            <!-- Section: Basic Details -->
+            <div class="section"><span>1</span>Basic Details</div>
+            <div class="inner-wrap">
+                {{ portfolio_form.as_p }}
+            </div>
+
+            <!-- Section: Education -->
+            <div class="section"><span>2</span>Education</div>
+            <div class="inner-wrap" id="education-container">
+                {% for edu in educations %}
+                <div class="education-item">
+                    {{ edu.course }} - {{ edu.institute }} ({{ edu.year_of_passing }})
+                </div>
+                {% endfor %}
+                {{ education_form.as_p }}
+                <button type="button" class="add-btn" onclick="addEducation()">+</button>
+            </div>
+
+            <!-- Section: Projects -->
+            <div class="section"><span>3</span>Projects</div>
+            <div class="inner-wrap" id="project-container">
+                {% for project in projects %}
+                <div class="project-item">
+                    {{ project.title }} - <a href="{{ project.link }}" target="_blank">View</a>
+                </div>
+                {% endfor %}
+                {{ project_form.as_p }}
+                <button type="button" class="add-btn" onclick="addProject()">+</button>
+            </div>
+
+            <!-- Section: Publications -->
+            <div class="section"><span>4</span>Publications</div>
+            <div class="inner-wrap" id="publication-container">
+                {% for publication in publications %}
+                <div class="publication-item">
+                    {{ publication.title }} ({{ publication.journal }}, {{ publication.year }})
+                </div>
+                {% endfor %}
+                {{ publication_form.as_p }}
+                <button type="button" class="add-btn" onclick="addPublication()">+</button>
+            </div>
+
+            <!-- Section: Certifications -->
+            <div class="section"><span>5</span>Certifications</div>
+            <div class="inner-wrap" id="certification-container">
+                {% for cert in certifications %}
+                <div class="certification-item">
+                    {{ cert.title }} - {{ cert.issuer }}
+                </div>
+                {% endfor %}
+                {{ certification_form.as_p }}
+                <button type="button" class="add-btn" onclick="addCertification()">+</button>
+            </div>
+
+            <!-- Section: Achievements -->
+            <div class="section"><span>6</span>Achievements</div>
+            <div class="inner-wrap" id="achievement-container">
+                {% for achievement in achievements %}
+                <div class="achievement-item">
+                    {{ achievement.description }}
+                </div>
+                {% endfor %}
+                {{ achievement_form.as_p }}
+                <button type="button" class="add-btn" onclick="addAchievement()">+</button>
+            </div>
+
+            <!-- Section: Skills -->
+            <div class="section"><span>7</span>Skills</div>
+            <div class="inner-wrap" id="skill-container">
+                {% for skill in skills %}
+                <div class="skill-item">
+                    {{ skill.name }} ({{ skill.proficiency }})
+                </div>
+                {% endfor %}
+                {{ skill_form.as_p }}
+                <button type="button" class="add-btn" onclick="addSkill()">+</button>
+            </div>
+
+            <!-- Submit Button -->
+            <div class="button-section text-center">
+                <input type="submit" value="Save Changes" />
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,80 @@
+{% extends 'base.html' %}
+{% block title %}Edit Portfolio{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="form-style-10">
+        <h1>Edit Your Portfolio<span>Update your profile with projects, skills, and achievements.</span></h1>
+
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+
+            <!-- Portfolio Details -->
+            <div class="section"><span>1</span>Basic Details</div>
+            <div class="inner-wrap">
+                {{ portfolio_form.as_p }}
+            </div>
+
+            <!-- Education Section -->
+            <div class="section"><span>2</span>Education</div>
+            <div class="inner-wrap">
+                {{ education_formset.management_form }}
+                {% for form in education_formset %}
+                    <div class="education-form">
+                        {{ form.as_p }}
+                    </div>
+                {% endfor %}
+            </div>
+
+            <!-- Projects Section -->
+            <div class="section"><span>3</span>Projects</div>
+            <div class="inner-wrap">
+                {{ project_formset.management_form }}
+                {% for form in project_formset %}
+                    <div class="project-form">
+                        {{ form.as_p }}
+                    </div>
+                {% endfor %}
+            </div>
+
+            <!-- Publications Section -->
+            <div class="section"><span>4</span>Publications</div>
+            <div class="inner-wrap">
+                {{ publication_formset.management_form }}
+                {% for form in publication_formset %}
+                    <div class="publication-form">
+                        {{ form.as_p }}
+                    </div>
+                {% endfor %}
+            </div>
+
+            <!-- Certifications Section -->
+            <div class="section"><span>5</span>Certifications</div>
+            <div class="inner-wrap">
+                {{ certification_formset.management_form }}
+                {% for form in certification_formset %}
+                    <div class="certification-form">
+                        {{ form.as_p }}
+                    </div>
+                {% endfor %}
+            </div>
+
+            <!-- Skills Section -->
+            <div class="section"><span>6</span>Skills</div>
+            <div class="inner-wrap">
+                {{ skill_formset.management_form }}
+                {% for form in skill_formset %}
+                    <div class="skill-form">
+                        {{ form.as_p }}
+                    </div>
+                {% endfor %}
+            </div>
+
+            <!-- Submit Button -->
+            <div class="button-section text-center">
+                <input type="submit" value="Save Changes" />
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}

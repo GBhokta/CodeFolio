@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% block title %}Portfolio List{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+    <h2 class="text-center fw-bold">Explore Portfolios</h2>
+
+    <!-- Search Bar -->
+    <div class="search-bar text-center mb-4">
+        <input type="text" id="searchInput" class="form-control" placeholder="Search for a portfolio..." onkeyup="filterPortfolios()">
+    </div>
+
+    <!-- Portfolio Grid -->
+    <div class="row">
+        {% for portfolio in portfolios %}
+        <div class="col-md-4">
+            <div class="card portfolio-card shadow">
+                {% comment %} <img src="{{ portfolio.profile_image.url }}" alt="Profile Image" class="card-img-top"> {% endcomment %}
+                <div class="card-body text-center">
+                    <h5 class="card-title">{{ portfolio.user.username }}</h5>
+                    <p class="card-text">{{ portfolio.title }}</p>
+                    <a href="{% url 'view_portfolio' username=portfolio.user.username %}" class="btn btn-primary">View Portfolio</a>
+                </div>
+            </div>
+        </div>
+        {% empty %}
+        <p class="text-center">No portfolios found.</p>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+function filterPortfolios() {
+    let input = document.getElementById("searchInput").value.toLowerCase();
+    let cards = document.getElementsByClassName("portfolio-card");
+
+    for (let i = 0; i < cards.length; i++) {
+        let title = cards[i].querySelector(".card-title").innerText.toLowerCase();
+        if (title.includes(input)) {
+            cards[i].style.display = "";
+        } else {
+            cards[i].style.display = "none";
+        }
+    }
+}
+</script>
+{% endblock %}
