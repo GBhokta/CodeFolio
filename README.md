@@ -1,4 +1,4 @@
-# 🚀 CodeFolio - Personal Portfolio Builder
+# CodeFolio - Personal Portfolio Builder
 
 CodeFolio is a **dynamic, customizable portfolio web application** built using **Django**.  
 It allows users to create and showcase their portfolios with **multiple elegant templates**, including:
@@ -8,17 +8,17 @@ It allows users to create and showcase their portfolios with **multiple elegant 
 
 ---
 
-## 🌟 Features
+##  Features
 ✅ **User Authentication** - Signup, Login, and Logout  
 ✅ **Profile Management** - Add Bio, Profile Picture, and Social Links  
 ✅ **Portfolio Sections** - Education, Projects, Skills, Certifications, Publications  
 ✅ **Multiple Themes** - Choose from different templates in the Navbar  
 ✅ **Elegant UI** - Fully responsive and modern UI with Bootstrap  
-✅ **Demo Images Available** - Preview saved in the `demo_images/` folder  
+✅ **Demo Images Available** - Preview saved in the `DEMO IMAGES/` folder  
 
 ---
 
-## 🛠️ Tech Stack
+## Tech Stack
 - **Backend:** Django, Python  
 - **Frontend:** HTML, CSS, Bootstrap  
 - **Database:** SQLite (Default)  
@@ -26,12 +26,11 @@ It allows users to create and showcase their portfolios with **multiple elegant 
 
 ---
 
-## 📸 Demo Screenshots
-Demo images of different portfolio templates are saved in the **`demo_images/`** folder.  
+## Demo Screenshots
+Demo images of different portfolio templates are saved in the **`DEMO IMAGES/`** folder.  
 
-Example:  
-![Modern Dark Theme]('DEMO IMAGES'/Screenshot(595).png)  
-![Elegant Light Theme]('DEMO IMAGES'/Screenshot(595).png)  
+![Modern Dark Theme](DEMO%20IMAGES/Screenshot_595.png)
+![Elegant Light Theme](DEMO%20IMAGES/Screenshot_596.png)
 
 ---
 
