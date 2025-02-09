@@ -35,23 +35,28 @@ Demo images of different portfolio templates are saved in the **`DEMO IMAGES/`**
 ![LOGIN PAGE](https://github.com/GBhokta/CodeFolio/blob/main/DEMO%20IMAGES/Screenshot%20(588).png)
 ![HOME PAGE](https://github.com/GBhokta/CodeFolio/blob/main/DEMO%20IMAGES/Screenshot%20(589).png)
 ![ADD DETAILS](https://github.com/GBhokta/CodeFolio/blob/main/DEMO%20IMAGES/Screenshot%20(591).png)
-https://github.com/GBhokta/CodeFolio/blob/main/DEMO%20IMAGES/Screenshot%20(592).png)
-(https://github.com/GBhokta/CodeFolio/blob/main/DEMO%20IMAGES/Screenshot%20(592).png)
-(https://github.com/GBhokta/CodeFolio/blob/main/DEMO%20IMAGES/Screenshot%20(593).png)
+![IMAGE](https://github.com/GBhokta/CodeFolio/blob/main/DEMO%20IMAGES/Screenshot%20(592).png)
+![IMAGE](https://github.com/GBhokta/CodeFolio/blob/main/DEMO%20IMAGES/Screenshot%20(592).png)
+![IMAGE](https://github.com/GBhokta/CodeFolio/blob/main/DEMO%20IMAGES/Screenshot%20(593).png)
 
-(https://github.com/GBhokta/CodeFolio/blob/main/DEMO%20IMAGES/Screenshot%20(594).png)
-(https://github.com/GBhokta/CodeFolio/blob/main/DEMO%20IMAGES/Screenshot%20(595).png)
-(https://github.com/GBhokta/CodeFolio/blob/main/DEMO%20IMAGES/Screenshot%20(596).png)
+![IMAGE](https://github.com/GBhokta/CodeFolio/blob/main/DEMO%20IMAGES/Screenshot%20(594).png)
+![IMAGE](https://github.com/GBhokta/CodeFolio/blob/main/DEMO%20IMAGES/Screenshot%20(595).png)
+![IMAGE](https://github.com/GBhokta/CodeFolio/blob/main/DEMO%20IMAGES/Screenshot%20(596).png)
 
 
-(https://github.com/GBhokta/CodeFolio/blob/main/DEMO%20IMAGES/Screenshot%20(597).png)
-(https://github.com/GBhokta/CodeFolio/blob/main/DEMO%20IMAGES/Screenshot%20(598).png)
-(https://github.com/GBhokta/CodeFolio/blob/main/DEMO%20IMAGES/Screenshot%20(599).png)
-(https://github.com/GBhokta/CodeFolio/blob/main/DEMO%20IMAGES/Screenshot%20(600).png)
-(https://github.com/GBhokta/CodeFolio/blob/main/DEMO%20IMAGES/Screenshot%20(601).png)
+![IMAGE](https://github.com/GBhokta/CodeFolio/blob/main/DEMO%20IMAGES/Screenshot%20(597).png)
+![IMAGE](https://github.com/GBhokta/CodeFolio/blob/main/DEMO%20IMAGES/Screenshot%20(598).png)
+![IMAGE](https://github.com/GBhokta/CodeFolio/blob/main/DEMO%20IMAGES/Screenshot%20(599).png)
+![IMAGE](https://github.com/GBhokta/CodeFolio/blob/main/DEMO%20IMAGES/Screenshot%20(600).png)
+![IMAGE](https://github.com/GBhokta/CodeFolio/blob/main/DEMO%20IMAGES/Screenshot%20(601).png)
 
 
 ##  Installation & Setup
+Clone the Code and run 
+
+python manage.py runserver 
+
+to run the server and run the project 
 
 ###  Clone the Repository
 ```sh
