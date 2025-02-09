@@ -34,9 +34,9 @@ Demo images of different portfolio templates are saved in the **`DEMO IMAGES/`**
 
 ---
 
-## 🚀 Installation & Setup
+##  Installation & Setup
 
-### 1️⃣ Clone the Repository
+###  Clone the Repository
 ```sh
-git clone https://github.com/your-username/CodeFolio.git
+git clone https://github.com/GBhokta/CodeFolio.git
 cd CodeFolio
