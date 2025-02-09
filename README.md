@@ -29,8 +29,8 @@ It allows users to create and showcase their portfolios with **multiple elegant 
 ## Demo Screenshots
 Demo images of different portfolio templates are saved in the **`DEMO IMAGES/`** folder.  
 
-![Modern Dark Theme](DEMO%20IMAGES/Screenshot_595.png)
-![Elegant Light Theme](DEMO%20IMAGES/Screenshot_596.png)
+![Modern Dark Theme](https://github.com/GBhokta/CodeFolio/blob/main/DEMO%20IMAGES/Screenshot%20(588).png)
+![Elegant Light Theme](https://github.com/GBhokta/CodeFolio/blob/main/DEMO%20IMAGES/Screenshot%20(593).png)
 
 ---
 
